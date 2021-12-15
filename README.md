@@ -11,5 +11,5 @@ chmod +x ~/dotfiles/install.sh
 ```
 run the script:
 ```bash
-sudo ~/dotfiles/./install.sh
+~/dotfiles/./install.sh
 ```

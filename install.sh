@@ -1,8 +1,10 @@
 #!/bin/bash
-echo "enter the sudo password, please"
+echo "Enter the sudo password."
 read PW
-echo $PW | sudo echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
-echo $PW | sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf
+echo $PW | echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
+echo $PW | echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf
+#echo $PW | sudo echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
+#echo $PW | sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf
 echo "Configured DNF"
 echo $PW | sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 echo "RPM Fusion added"
