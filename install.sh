@@ -7,5 +7,5 @@ echo "RPM Fusion added"
 sudo dnf copr enable kwizart/fedy -y
 sudo dnf install mpv alacritty bspwm sxhkd arandr feh polybar picom lxappearance fedy -y
 echo "Installed programs"
-cp ~/dotfiles/configs ~/.config/
+cp -r ~/dotfiles/.config ~/
 echo "Copied configs, everything is done!"
